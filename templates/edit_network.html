@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Networks</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Credentials</button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active container border border-top-0" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+   <h3>Add Network</h3>
+    <br/>
+
+    <form method="POST">
+        {%  csrf_token %}
+
+        {{ form.as_p  }}
+
+    <br/>
+        <button type="submit" class="btn btn-secondary">Update Network</button>
+    </form>
+    <br/><br/>
+  </div>
+  <div class="tab-pane fade container border border-top-0" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <br/>
+        <a href="{% url 'add_credentials' %}" class="btn btn btn-dark" role="button" aria-disabled="true">Add</a>
+        <br/><br/>
+        {% if credentials %}
+            {% for cred in credentials %}
+            <div class="card container">
+                <div class="row">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col">
+                                <h5><strong>{{ cred.name }}</strong> {{ cred.type }} {{ cred.description }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end card-footer">
+            {#          <a href="{% url 'edit_ip' ip.id %}" class="btn btn-primary">Edit</a>#}
+                </div>
+            </div>
+            <br/><br/>
+            {% endfor %}
+        {% endif %}
+        <br/><br/>
+  </div>
+  <div class="tab-pane fade container border border-top-0" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+</div>
+{% endblock content %}
