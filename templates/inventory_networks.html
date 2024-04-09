@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if devices %}
+        <div class="card container">
+            <div class="row">
+                <div class="card-header">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                            <th scope="col">Status</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Manufacturer</th>
+                            <th scope="col">Model</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for device in devices %}
+                        <tr>
+                            {% if device.status == 0 %}
+                                <td><i class="material-icons" style="color:lawngreen;weight:700">arrow_upward</i></td>
+                            {% elif device.status == 1 %}
+                                <td><i class="material-icons" style="color:red">arrow_downward</i></td>
+                            {%  endif %}
+                            <td><a class="Link link-dark link-underline-opacity-0 text-decoration-none" href="{% url 'device' device.id %}">{{ device.name }}</a></td>
+                            <td>{{ device.ip_address }}</td>
+                            <td>{{ device.type }}</td>
+                            <td>{{ device.manufacturer }}</td>
+                            <td>{{ device.device_model }}</td>
+{#                            <td>#}
+{#                                <a href="{% url 'edit_network' ip.id %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>#}
+{#                                <a href="{% url 'delete_network' ip.id %}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>#}
+{#                                <a href="{% url 'scan' ip.id %}" class="Search" title="Discover" data-toggle="tooltip"><i class="material-icons">&#xe8b6;</i></a>#}
+{#                            </td>#}
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br/>
+    {% endif %}
+{% endblock content %}

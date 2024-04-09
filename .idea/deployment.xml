@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="firewatch" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="firewatch">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/msabo/firewatch" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/lib" />
+            <excludedPath path="/home/msabo/firewatch/lib" />
+            <excludedPath path="/home/msabo/firewatch/lib64" />
+            <excludedPath local="true" path="$PROJECT_DIR$/bin" />
+            <excludedPath path="/home/msabo/firewatch/bin" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="01e1c59b-89d8-4ea2-89ee-18f6e0c15ea5" name="firewatch">
+        <fileTransfer accessType="SFTP" host="10.69.20.70" port="22" sshConfigId="161d318d-b49d-403d-8ff6-3d75fe427ccb" sshConfig="msabo@10.69.20.70:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

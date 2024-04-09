@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(Device)
 admin.site.register(Credentials)
 admin.site.register(Ipaddresses)
+admin.site.register(ObjectID)
